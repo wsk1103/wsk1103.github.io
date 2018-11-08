@@ -11,7 +11,7 @@ tags:
 ## 使用框架JSF+Spring Data
 ## 插件 Lombok
 
-JSF标签控件效果预览可以查看  https://www.primefaces.org/showcase/
+JSF标签控件效果预览可以查看  [https://www.primefaces.org/showcase/](https://www.primefaces.org/showcase/)
 
 ## Spring Data作用
 操作数据库，该框架直接封装了许多方法，可以直接使用使用操作数据库，不需要自己动手编写SQL，但是对于比较复杂的SQL查询，可以自定义SQL查询。
@@ -260,7 +260,7 @@ public class DemoBean extends JSFListingBean<DemoSearchRequest, DemoSearchRespon
 页面存放在web项目的views文件下
 
 
-JSF标签控件效果预览可以查看  https://www.primefaces.org/showcase/
+JSF标签控件效果预览可以查看  [https://www.primefaces.org/showcase/](https://www.primefaces.org/showcase/)
 
 ```
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
