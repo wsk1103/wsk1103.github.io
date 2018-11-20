@@ -17,7 +17,7 @@ future: true
 # SNS settings
 RSS: false
 # weibo_username:     wsk1103
-zhihu_username:     wsk1103
+# zhihu_username:     wsk1103
 github_username:    wsk1103
 gitee_username:     wsk1103
 # twitter_username:   wsk1103
