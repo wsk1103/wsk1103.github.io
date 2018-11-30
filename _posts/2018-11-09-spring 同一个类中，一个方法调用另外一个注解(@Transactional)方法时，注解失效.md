@@ -1,6 +1,8 @@
 ---
 title: "spring同一个类中，一个方法调用另外一个注解(@Transactional)方法时，注解失效"
 
+url: "https://wsk1103.github.io/"
+
 tags:
   - 错误笔记
 ---
