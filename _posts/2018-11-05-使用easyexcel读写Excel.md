@@ -115,10 +115,10 @@ public class ExcelListener<T extends BaseRowModel> extends AnalysisEventListener
         AnalysisEventListener listener = new ExcelListener();
         //读取xls 和 xlxs格式
         //如果POI版本为3.17，可以如下声明
-        //ExcelReader reader = new ExcelReader(inputStream, null, listener);
+        ExcelReader reader = new ExcelReader(inputStream, null, listener);
         //判断格式，针对POI版本低于3.17
-        ExcelTypeEnum excelTypeEnum = valueOf(inputStream);
-        ExcelReader reader = new ExcelReader(inputStream, excelTypeEnum, null, listener);
+        //ExcelTypeEnum excelTypeEnum = valueOf(inputStream);
+        //ExcelReader reader = new ExcelReader(inputStream, excelTypeEnum, null, listener);
         reader.read(new com.alibaba.excel.metadata.Sheet(1, 1, clazz));
 
         return ((ExcelListener) listener).getData();
