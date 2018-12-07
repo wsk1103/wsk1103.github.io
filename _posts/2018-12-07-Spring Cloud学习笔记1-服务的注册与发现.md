@@ -11,13 +11,13 @@ tags:
 #### 备注：  
 官网：[http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html](http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html)
 
-JAVA： 1.8 +
+**JAVA**： 1.8 +
 
-MAVEN： 3.5.0 +
+**MAVEN**： 3.5.0 +
 
-Spring Boot：2.1.1.RELEASE
+**Spring Boot**：2.1.1.RELEASE
 
-Spring Cloud：Finchley
+**Spring Cloud**：Finchley
 
 说明：Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus). Coordination of distributed systems leads to boiler plate patterns, and using Spring Cloud developers can quickly stand up services and applications that implement those patterns. They will work well in any distributed environment, including the developer’s own laptop, bare metal data centres, and managed platforms such as Cloud Foundry.  
 Spring Cloud为开发人员提供了快速构建分布式系统中一些常见模式的工具（例如配置管理，服务发现，断路器，智能路由，微代理，控制总线）。
@@ -44,7 +44,7 @@ Spring Cloud为开发人员提供了快速构建分布式系统中一些常见�
 3. 什么都不用选
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/3.png)
-4. 修改pom.xml，需要注意的是该主项目需要被打包为pom模式，所以需要在packaging中声明为pom。
+4. 修改pom.xml，需要注意的是该主项目需要被打包为pom模式，所以需要在**packaging中声明为pom**。
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -181,6 +181,27 @@ spring:
 ```
 
 4. 启动ServerApplication，访问 http://localhost:8761/ 
+
+需要在ServerApplication上增加注解**@EnableEurekaServer**
+```
+package com.wsk.server;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+//声明为一个服务注册中心
+@EnableEurekaServer
+public class ServerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ServerApplication.class, args);
+    }
+}
+
+```
+
 当前没有任何服务注册到该注册中心。  
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/6.png)
 ## 构建子项目client：客户端
@@ -261,7 +282,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 ```
 
-4. 修改ClientApplication并启动，
+4. 修改ClientApplication并启动
+
+在ClientApplication上添加注解  
+**@EnableEurekaClient** 和 
+**@RestController**
 
 ```
 package com.wsk.client;
@@ -275,6 +300,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+//声明这是一个服务客户端
 @EnableEurekaClient
 @RestController
 public class ClientApplication {
@@ -286,7 +312,7 @@ public class ClientApplication {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "sky") String name) {
         return "hi " + name + " ,i am from port:" + port;
     }
@@ -299,7 +325,7 @@ public class ClientApplication {
 可以看到service-client已经注册到注册中心
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/7.png)
-6. 访问 http://localhost:8762/hello?name=go
+6. 访问 http://localhost:8762/hi?name=go
 
 页面回显
 
