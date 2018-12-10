@@ -134,5 +134,5 @@ gitalk:
   clientID: 37d92ae6dc1fb1f58f7c
   #`Github Application clientSecret`
   clientSecret: 3f8b09fd9c8c3383e95211f60e8376e34adc5b6e
-    distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
