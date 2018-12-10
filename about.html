@@ -7,9 +7,9 @@ multilingual: true
 ---
 
 <!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
+<select class="sel-lang" onchange="onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese</option>
+    <option value="1"> 英文 English</option>
 </select>
 
 <!-- Chinese Version -->
@@ -29,16 +29,16 @@ multilingual: true
 </div>
 
 
-{% if site.disqus_username %}
-<!-- disqus 评论框 start -->
+<!--{% if site.disqus_username %}
+&lt;!&ndash; disqus 评论框 start &ndash;&gt;
 <div class="comment">
     <div id="disqus_thread" class="disqus-thread">
 
     </div>
 </div>
-<!-- disqus 评论框 end -->
+&lt;!&ndash; disqus 评论框 end &ndash;&gt;
 
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+&lt;!&ndash; disqus 公共JS代码 start (一个网页只需插入一次) &ndash;&gt;
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus_username}}";
@@ -51,5 +51,26 @@ multilingual: true
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
+&lt;!&ndash; disqus 公共JS代码 end &ndash;&gt;
+{% endif %}-->
+<!-- Gitalk 评论 start  -->
+
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+
+        // gitalk的主要参数
+        clientID: '37d92ae6dc1fb1f58f7c',
+        clientSecret: '3f8b09fd9c8c3383e95211f60e8376e34adc5b6e',
+        repo: 'wsk1103.github.io',
+        owner: 'wsk1103',
+        admin: ['wsk1103'],
+        id: 'about',
+
+    });
+    gitalk.render('gitalk-container');
+</script>
+<!-- Gitalk end -->

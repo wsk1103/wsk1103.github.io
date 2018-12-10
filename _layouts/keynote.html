@@ -52,7 +52,9 @@ layout: default
                 </div>
                 <!-- disqus 评论框 end -->
                 {% endif %}
-
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                <div id="gitalk-container"></div>
             </div>
 
             <!-- Sidebar Container -->
@@ -111,7 +113,22 @@ layout: default
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
+<!-- Link Gitalk 的支持文件  -->
+<script type="text/javascript">
+    var gitalk = new Gitalk({
 
+        // gitalk的主要参数
+        clientID: '37d92ae6dc1fb1f58f7c',
+        clientSecret: '3f8b09fd9c8c3383e95211f60e8376e34adc5b6e',
+        repo: 'wsk1103.github.io',
+        owner: 'wsk1103',
+        admin: ['wsk1103'],
+        id: 'post',
+
+    });
+    gitalk.render('gitalk-container');
+</script>
+<!-- Gitalk end -->
 
 {% if site.anchorjs %}
 <!-- async load function -->
