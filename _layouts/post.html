@@ -70,6 +70,9 @@ layout: default
                 <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
                 <script src="{{ site.baseurl }}/js/md5.min.js"></script>
                 <script type="text/javascript">
+                    var aa = '{{page.title}}';
+                    alert(aa);
+                    console.log(aa);
                     var gitalk = new Gitalk({
                         clientID: '{{site.gitalk.clientID}}',
                         clientSecret: '{{site.gitalk.clientSecret}}',
