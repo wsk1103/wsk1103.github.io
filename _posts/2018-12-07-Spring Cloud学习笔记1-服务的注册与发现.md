@@ -11,6 +11,7 @@ tags:
 #### 备注：  
 官网：[http://spring.io/projects/spring-cloud](http://spring.io/projects/spring-cloud)
 
+
 **JAVA**： 1.8 +
 
 **MAVEN**： 3.5.0 +
@@ -35,16 +36,16 @@ Spring Cloud为开发人员提供了快速构建分布式系统中一些常见�
 该主项目的作用是后续的子模块项目都可以直接引用父模块中声明的jar包，而不需要重复声明。
 
 亦作版本统一控制管理。
-1. file -> new -> project -> spring Initializr
+#### 1. file -> new -> project -> spring Initializr
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/1.png)
-2. 命名该项目。例如my-spring-cloud
+#### 2. 命名该项目。例如my-spring-cloud
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/2.png)
-3. 什么都不用选
+#### 3. 什么都不用选
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/3.png)
-4. 修改pom.xml，需要注意的是该主项目需要被打包为pom模式，所以需要在**packaging中声明为pom**。
+#### 4. 修改pom.xml，需要注意的是该主项目需要被打包为pom模式，所以需要在**packaging中声明为pom**。
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,12 +118,12 @@ Spring Cloud为开发人员提供了快速构建分布式系统中一些常见�
 ```
 
 ## 构建子项目server：服务注册中心
-1. file -> new -> module -> spring Initializr
+#### 1. file -> new -> module -> spring Initializr
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/4.png)
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/5.png)
-2. 修改子项目server的pom：主要是父项目声明改为主项目，并且添加依赖
+#### 2. 修改子项目server的pom：主要是父项目声明改为主项目，并且添加依赖
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,7 +157,7 @@ Spring Cloud为开发人员提供了快速构建分布式系统中一些常见�
 </project>
 
 ```
-3. 重命名application.properties为application.yml  
+### 3. 重命名application.properties为application.yml  
 
 增加配置
 ```
@@ -180,7 +181,7 @@ spring:
     name: eurka-server
 ```
 
-4. 启动ServerApplication，访问 http://localhost:8761/ 
+#### 4. 启动ServerApplication，访问 http://localhost:8761/ 
 
 需要在ServerApplication上增加注解**@EnableEurekaServer**
 ```
@@ -205,14 +206,14 @@ public class ServerApplication {
 当前没有任何服务注册到该注册中心。  
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/6.png)
 ## 构建子项目client：客户端
-1. file -> new -> module -> spring Initializr
+#### 1. file -> new -> module -> spring Initializr
 
 同上
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/4.png)
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/5.png)
-2. 修改子项目client的pom：主要是父项目声明改为主项目，并且添加依赖
+#### 2. 修改子项目client的pom：主要是父项目声明改为主项目，并且添加依赖
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -263,7 +264,7 @@ public class ServerApplication {
 </project>
 
 ```
-3. 重命名application.properties为application.yml  
+#### 3. 重命名application.properties为application.yml  
 
 增加配置
 
@@ -282,7 +283,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 ```
 
-4. 修改ClientApplication并启动
+#### 4. 修改ClientApplication并启动
 
 在ClientApplication上添加注解  
 **@EnableEurekaClient** 和 
@@ -320,12 +321,12 @@ public class ClientApplication {
 }
 
 ```
-5. 刷新 http://localhost:8761/
+#### 5. 刷新 http://localhost:8761/
 
 可以看到service-client已经注册到注册中心
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud1/7.png)
-6. 访问 http://localhost:8762/hi?name=go
+#### 6. 访问 http://localhost:8762/hi?name=go
 
 页面回显
 

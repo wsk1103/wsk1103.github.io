@@ -11,6 +11,7 @@ tags:
 #### 备注：  
 官网：[http://spring.io/projects/spring-cloud](http://spring.io/projects/spring-cloud)
 
+
 **JAVA**： 1.8 +
 
 **MAVEN**： 3.5.0 +
@@ -42,7 +43,7 @@ copy学习笔记1中的client，重新命名为client2，并且将端口修改87
 
 ## 搭建Ribbon服务：ribbon
 搭建方法同学习笔记1中新建module
-1. 修改pom文件
+#### 1. 修改pom文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -96,7 +97,7 @@ copy学习笔记1中的client，重新命名为client2，并且将端口修改87
 
 ```
 
-2. 重命名application.properties为application.yml  
+#### 2. 重命名application.properties为application.yml  
 
 ```
 eureka:
@@ -112,7 +113,7 @@ spring:
     name: service-ribbon
 ```
 
-3. 修改ServiceRibbonApplication
+#### 3. 修改ServiceRibbonApplication
 
 需要在ServiceRibbonApplication类上新增注解 **@EnableEurekaClient**
 和
@@ -147,7 +148,7 @@ public class ServiceRibbonApplication {
 
 ```
 
-4. 新建包service -> 新建类HelloService
+#### 4. 新建包service -> 新建类HelloService
 
 该类需要增加注解 **@Service**
 ```
@@ -177,7 +178,7 @@ public class HelloService {
 
 ```
 
-5. 新建包controller -> 新建类HiController
+#### 5. 新建包controller -> 新建类HiController
 
 访问该类中的方法的时候，该类会自动根据负载均衡的规则轮训注册中心的SERVICE-CLIENT。
 ```
@@ -208,7 +209,7 @@ public class HiController {
 
 ```
 
-6. 启动ServiceRibbonApplication，多次访问http://localhost:8764/hi?name=sky
+#### 6. 启动ServiceRibbonApplication，多次访问http://localhost:8764/hi?name=sky
 浏览器会交通显示：
 
 ```

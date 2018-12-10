@@ -30,12 +30,12 @@ Feign是一个声明性的Web服务客户端。它使编写Web服务客户端变
 ---
 
 ## 启动服务
-1. 启动学习笔记2中的3个服务，server，client，client2。
+#### 1. 启动学习笔记2中的3个服务，server，client，client2。
 
 
 ## 搭建Feign服务：feign
 搭建方法同学习笔记1中新建module
-1. 修改pom文件
+#### 1. 修改pom文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -101,7 +101,7 @@ Feign是一个声明性的Web服务客户端。它使编写Web服务客户端变
 
 ```
 
-2. 重命名application.properties为application.yml 
+#### 2. 重命名application.properties为application.yml 
 
 
 ```
@@ -119,7 +119,7 @@ spring:
 
 ```
 
-3. 修改SericeFeignApplication
+#### 3. 修改SericeFeignApplication
 
 需要在SericeFeignApplication类上新增注解  
 @EnableEurekaClient  
@@ -154,7 +154,7 @@ public class SericeFeignApplication {
 ```
 
 
-4. 新增包service -> 新增类 HiService
+#### 4. 新增包service -> 新增类 HiService
 
 ```
 package com.wsk.feign.service;
@@ -182,7 +182,7 @@ public interface HiService {
 ```
 
 
-5. 新增包controller -> 新增类HiController
+#### 5. 新增包controller -> 新增类HiController
 
 ```
 package com.wsk.feign.controller;
@@ -215,7 +215,7 @@ public class HiController {
 
 ```
 
-6. 启动服务SericeFeignApplication
+#### 6. 启动服务SericeFeignApplication
 
 多次访问http://localhost:8765/hi?name=sky,浏览器交替显示：  
 ```

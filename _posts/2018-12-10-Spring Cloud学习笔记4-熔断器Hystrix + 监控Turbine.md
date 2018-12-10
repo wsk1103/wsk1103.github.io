@@ -35,7 +35,7 @@ A service failure in the lower level of services can cause cascading failure all
 
 ## Feign集成Hystrix
 延用学习笔记3的项目，对其进行修改
-1. 修改pom.xml，增加
+#### 1. 修改pom.xml，增加
 
 ```
     <dependency>
@@ -48,7 +48,7 @@ A service failure in the lower level of services can cause cascading failure all
     </dependency>
 ```
 
-2. application.yml 增加新的配置
+#### 2. application.yml 增加新的配置
 
 ```
 # 因为feign默认集成了hystrix，但是是处于关闭状态。
@@ -57,14 +57,14 @@ feign:
     enabled: true
 ```
 
-3. 修改SericeFeignApplication
+#### 3. 修改SericeFeignApplication
 
 注解增加  
 //启动hystrix  
 @EnableHystrix  
 @EnableCircuitBreaker  
 
-4. 修改 包service -> HiService
+#### 4. 修改 包service -> HiService
 
 在注解@FeignClient新增属性fallback，其中的值HiServiceHystricImpl.class为该接口的实现，在接口访问失败的时候，就会快速调用HiServiceHystricImpl.class里面对应的方法。
 
@@ -92,7 +92,7 @@ public interface HiService {
 
 ```
 
-5. 增加接口的的实现类
+#### 5. 增加接口的的实现类
 
 ```
 package com.wsk.feign.service.impl;
@@ -123,7 +123,7 @@ public class HiServiceHystricImpl implements HiService {
 
 ```
 
-6. 修改SericeFeignApplication
+#### 6. 修改SericeFeignApplication
 
 新增注解  
 //表明开启熔断器  
@@ -164,7 +164,7 @@ public class SericeFeignApplication {
 Turbine是Netflix开源的将Server-Sent Event（SSE）的JSON数据流聚合成单个流的工具。我们可以通过Turbine将Hystrix生产的监控数据（JSON）合并到一个流中，方便我们对存在多个实例的应用进行监控。
 
 
-1. 为Feign项目修改application.yml
+#### 1. 为Feign项目修改application.yml
 
 ```
 # 熔断器
@@ -179,7 +179,7 @@ management:
 ```
 
 
-2. 为Feign项目新增包configuration -> 新增类 HystrixConfiguration
+#### 2. 为Feign项目新增包configuration -> 新增类 HystrixConfiguration
 
 ```
 package com.wsk.feign.configuration;
@@ -219,12 +219,12 @@ public class HystrixConfiguration {
 
 ```
 
-3. 新建项目turbine
+#### 3. 新建项目turbine
 
 搭建方法同学习笔记1中新建module
 
 
-4. 修改pom
+#### 4. 修改pom
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -281,7 +281,7 @@ public class HystrixConfiguration {
 
 ```
 
-5. 重命名application.properties为application.yml 
+#### 5. 重命名application.properties为application.yml 
 
 ```
 server:
@@ -306,7 +306,7 @@ turbine:
 
 ```
 
-6. 修改SericeFeignApplication
+#### 6. 修改SericeFeignApplication
 
 新增注解  
 @EnableDiscoveryClient  
@@ -339,15 +339,15 @@ public class TurbineApplication {
 ```
 
 ## 输出
-1. 依次启动server，client，feign，turbine这4个项目。
+#### 1. 依次启动server，client，feign，turbine这4个项目。
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud4/5.png)
-2. 访问turbine项目，http://localhost:8764/hystrix
+#### 2. 访问turbine项目，http://localhost:8764/hystrix
 
 输入 http://localhost:8765/actuator/hystrix.stream
 ，点击monitor stream  
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud4/6.png)
-3. 可以看到监控界面，该界面处于loading状态，是因为feign没有访问相应的接口。
+#### 3. 可以看到监控界面，该界面处于loading状态，是因为feign没有访问相应的接口。
 
 访问feign相应的接口：http://localhost:8765/hi?name=wsk
 ，可以看到相应的监控说明。
@@ -355,6 +355,6 @@ public class TurbineApplication {
 
 *注*：一个接口一个图像
 
-5. 监控说明
+#### 4. 监控说明
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20cloud4/10.png)
