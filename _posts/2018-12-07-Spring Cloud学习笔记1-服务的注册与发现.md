@@ -16,7 +16,7 @@ tags:
 
 **MAVEN**： 3.5.0 +
 
-**Spring Boot**：2.1.1.RELEASE
+**Spring Boot**：2.0.7.RELEASE
 
 **Spring Cloud**：Finchley
 
