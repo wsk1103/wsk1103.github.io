@@ -176,6 +176,7 @@ public class ServiceZuulApplication {
 ## 路由配置说明
 #### 1. 参数说明
 **路由配置基础参数**
+
 |key|value|
 |---|---|
 zuul.routes.{routename}	|路由名称，自定义，支持小写字母、-
@@ -186,6 +187,7 @@ zuul.ignored-services	|忽略指定的服务,可以配置多个，以,间隔
 zuul.ignored-patterns	|忽略指定的路径，可以配置多个，以,间隔。同样支持通配符
 
 **path通配符说明**
+
 |key|value|举例|说明
 |---|---|---|---|
 ?	|匹配单个任意字符	|/sk/?	|/sk/a、/sk/b
