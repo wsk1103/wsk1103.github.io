@@ -11,7 +11,7 @@ tags:
 #### 备注：  
 **官网**：[http://spring.io/projects/spring-cloud](http://spring.io/projects/spring-cloud)
 
-**总纲**：[https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html](https://cloud.spring.io/spring-cloud-gateway/2.0.x/single/spring-cloud-gateway.html)
+**总纲**：[https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html](https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html)
 
 **JAVA**： 1.8 +
 

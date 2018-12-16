@@ -11,7 +11,7 @@ tags:
 #### 备注：  
 **官网**：[http://spring.io/projects/spring-cloud](https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.1.0.M3/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients)
 
-**总纲**：[https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html](https://cloud.spring.io/spring-cloud-gateway/2.0.x/single/spring-cloud-gateway.html)
+**总纲**：[https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html](https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html)
 
 **JAVA**： 1.8 +
 
