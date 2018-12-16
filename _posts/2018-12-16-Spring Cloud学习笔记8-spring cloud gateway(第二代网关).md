@@ -1,5 +1,5 @@
 ---
-title: "Spring Cloud学习笔记7-服务限流 or API限流(Zuul+RateLimiter)"
+title: "Spring Cloud学习笔记8-spring cloud gateway(第二代网关)"
 
 url: "https://wsk1103.github.io/"
 
