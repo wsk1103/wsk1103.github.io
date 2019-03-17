@@ -1,3 +1,12 @@
+---
+title: "2019-02-15-游戏：杀戮尖塔（Slay the spire）mod--拉格朗·月"
+
+url: "https://wsk1103.github.io/"
+
+tags:
+  - 游戏
+---
+
 This is a mod for SlayTheSpire!  
 这是一个杀戮尖塔的MOD！
 
