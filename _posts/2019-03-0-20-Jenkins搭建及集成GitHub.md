@@ -95,7 +95,7 @@ Starting jenkins (via systemctl):                          [  OK  ]
 ```
 
 5. 访问网页
-http://localhost:8080/  
+http://localhost:8585/  
 然后根据页面提示输入密码。
 
 ```
