@@ -1,5 +1,5 @@
 ---
-title: "2019-03-0-20-Jenkins搭建及集成GitHub"
+title: "Jenkins搭建及集成GitHub"
 
 url: "https://wsk1103.github.io/"
 
