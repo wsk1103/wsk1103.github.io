@@ -1,5 +1,5 @@
 ---
-title: "2019-02-15-游戏：杀戮尖塔（Slay the spire）mod--拉格朗·月"
+title: "游戏：杀戮尖塔（Slay the spire）mod--拉格朗·月"
 
 url: "https://wsk1103.github.io/"
 
