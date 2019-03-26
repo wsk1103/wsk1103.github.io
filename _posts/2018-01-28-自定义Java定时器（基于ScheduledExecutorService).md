@@ -3,7 +3,7 @@
 title: "自定义Java定时器（基于ScheduledExecutorService)"
 
 tags:
-  - JAVA
+  - Java
   - 定时任务
 
 ---

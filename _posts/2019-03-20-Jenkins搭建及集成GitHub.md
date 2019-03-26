@@ -41,15 +41,15 @@ Docker (navigate to Get Docker at the top of the website to access the Docker do
 ### 2. 安装Jenkins
 ```
 [root@wsk ~]# wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
-[root@izwz9ga6l7ls6ozy9ylwbdz ~]# rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-[root@izwz9ga6l7ls6ozy9ylwbdz ~]# yum install jenkins
+[root@wsk ~]# rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+[root@wsk ~]# yum install jenkins
 ```
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/jenkins/2.png)
 
 ### 3. 查看安装结果
 
 ```
-[root@izwz9ga6l7ls6ozy9ylwbdz jenkins]# find / -name jenkins
+[root@wsk jenkins]# find / -name jenkins
 /usr/lib/jenkins --这个文件夹里面存放的是war包
 /etc/logrotate.d/jenkins
 /etc/sysconfig/jenkins --配置文件
@@ -84,17 +84,17 @@ JENKINS_PORT="8585"
 ### 5. 启动Jenkins
 
 ```
-[root@izwz9ga6l7ls6ozy9ylwbdz ~]# service jenkins start
+[root@wsk ~]# service jenkins start
 Starting jenkins (via systemctl):                          [  OK  ]
 
 ```
 
 ### 6. 访问网页
-http://localhost:8080/  
+http://localhost:8585/  
 然后根据页面提示输入密码。
 
 ```
-[root@izwz9ga6l7ls6ozy9ylwbdz ~]# vi /var/lib/jenkins/secrets/initialAdminPassword
+[root@wsk ~]# vi /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 ### 7. 可以选择默认安装或者自定义安装，一般选择自定义安装。

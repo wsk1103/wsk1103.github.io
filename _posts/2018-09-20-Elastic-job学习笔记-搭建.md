@@ -3,7 +3,7 @@
 title: "Elastic Job学习笔记-搭建分布式定时任务"
 
 tags:
-  - JAVA
+  - Java
   - 定时任务
   - 学习笔记
 ---

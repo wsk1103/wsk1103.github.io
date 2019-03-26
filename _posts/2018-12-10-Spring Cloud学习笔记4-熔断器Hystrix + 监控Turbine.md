@@ -13,7 +13,7 @@ tags:
 
 **总纲**：[https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html](https://cloud.spring.io/spring-cloud-static/Finchley.SR2/single/spring-cloud.html)
 
-**JAVA**： 1.8 +
+**Java**： 1.8 +
 
 **MAVEN**： 3.5.0 +
 
