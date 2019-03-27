@@ -1,5 +1,5 @@
 ---
-title: "理解HashMap-基于java1.8"
+title: "理解HashMap，HashTable-基于java1.8"
 
 url: "https://wsk1103.github.io/"
 
