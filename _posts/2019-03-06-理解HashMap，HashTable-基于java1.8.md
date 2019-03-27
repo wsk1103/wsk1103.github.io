@@ -7,9 +7,10 @@ tags:
   - Java
 ---
 
-
 **java -version** ：jdk 1.8.0_191
 
+
+# HashMap
 ## 构造
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/1.png)
 
@@ -30,6 +31,7 @@ tags:
 
 链表时间复杂度**O(n)**，红黑树时间复杂度**O(log n)**
 ## 静态参数
+
 
 ```
     /**
@@ -111,7 +113,7 @@ tags:
 
 假设 h = hashCode() = 1111 1111 1111 1111 1111 0101 1010 0011
 
-| 步数 |操作 | 值 | 
+步数 |操作 | 值 | 
 |---|---|---|
 1 | h = hashCode() | 1111 1111 1111 1111 1111 0101 1010 0011
 2 | h | 1111 1111 1111 1111 1111 0101 1010 0011
@@ -119,7 +121,6 @@ tags:
 4 | h ^ (h >>> 16) | 1111 1111 1111 1111 0000 1010 0101 1100
 5 | (n - 1) & hash | 0000 0000 0000 0000 0000 0000 0000 1111(15) <br> 1111 1111 1111 1111 0000 1010 0101 1100 
 6 | 结果 | 1100(12)
-
 则结果 (n - 1) & hash 值为12。
 
 可以看出，HashMap是允许key为null的，当key为null的时候，hash值为0。
@@ -471,11 +472,73 @@ hash & n-1 实际上就是取保留低位值，结果是在n的范围内，类�
 当时当在初始化数组的时候，没有设置为2的次幂，那么就和一般的取模运算一样，没有什么性能改进。
 
 #### 使HashMap线程安全
-如果不使用ConcurrentHashMap，那么可以使用JUC包。
+如果不使用ConcurrentHashMap，那么可以使用java.util包。
 
 ```
 Map m = Collections.synchronizedMap(new HashMap(...));
 ```
 同时Set,List也一样。
+
+# HashTable
+实现的接口和继承的类和 HashMap 一致，里面的方法，变量的定义也是基本一致的。
+只是在操作数组和链表的时候，在所有的方法上都添加 **synchronized** 关键字。
+
+例如 **add方法**
+
+```
+    /**
+     * Maps the specified <code>key</code> to the specified
+     * <code>value</code> in this hashtable. Neither the key nor the
+     * value can be <code>null</code>. <p>
+     *
+     * The value can be retrieved by calling the <code>get</code> method
+     * with a key that is equal to the original key.
+     *
+     * @param      key     the hashtable key
+     * @param      value   the value
+     * @return     the previous value of the specified key in this hashtable,
+     *             or <code>null</code> if it did not have one
+     * @exception  NullPointerException  if the key or value is
+     *               <code>null</code>
+     * @see     Object#equals(Object)
+     * @see     #get(Object)
+     */
+    public synchronized V put(K key, V value) {
+        // Make sure the value is not null
+        if (value == null) {
+            throw new NullPointerException();
+        }
+
+        // Makes sure the key is not already in the hashtable.
+        Entry<?,?> tab[] = table;
+        int hash = key.hashCode();
+        int index = (hash & 0x7FFFFFFF) % tab.length;
+        @SuppressWarnings("unchecked")
+        Entry<K,V> entry = (Entry<K,V>)tab[index];
+        for(; entry != null ; entry = entry.next) {
+            if ((entry.hash == hash) && entry.key.equals(key)) {
+                V old = entry.value;
+                entry.value = value;
+                return old;
+            }
+        }
+
+        addEntry(hash, key, value, index);
+        return null;
+    }
+```
+从这里就可以看出， HashTable 是不允许存储的对象为 **null**
+
+并且 HashTable 中的链表是不会转为红黑树。
+
+有趣的是， HashTable 的初始容量是 **11**，而 **扩容操作** 是 **int newCapacity = (oldCapacity << 1) + 1** ，即*2+1 ，  
+计算hash也比较简单
+
+```
+int hash = key.hashCode();
+int index = (hash & 0x7FFFFFFF) % tab.length;
+```
+
+
 
 
