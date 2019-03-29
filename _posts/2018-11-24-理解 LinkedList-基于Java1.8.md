@@ -13,14 +13,15 @@ tags:
 **java -version** ：jdk 1.8.0_191
 
 ## 构造
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/1.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/4.png)
 
 ## 类内参数，方法
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/3.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/5.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/4.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/6.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/5.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/7.png)
+
 
 
 

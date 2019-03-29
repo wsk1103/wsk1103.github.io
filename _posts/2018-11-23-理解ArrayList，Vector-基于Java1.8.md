@@ -13,14 +13,12 @@ tags:
 
 # ArrayList
 ## 构造
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/1.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/1.png)
 
 ## 类内参数，方法
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/3.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/2.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/4.png)
-
-![image](https://raw.githubusercontent.com/wsk1103/images/master/hashmap/5.png)
+![image](https://raw.githubusercontent.com/wsk1103/images/master/list/3.png)
 
 
 
