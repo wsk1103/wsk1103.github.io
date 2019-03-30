@@ -7,7 +7,6 @@ tags:
   - Java
 ---
 
-
 **java -version** ：jdk 1.8.0_191
 
 ## 构造
