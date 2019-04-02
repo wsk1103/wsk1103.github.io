@@ -97,6 +97,7 @@ tags:
         map = new HashMap<>(initialCapacity);
     }
 ```
+
 #### HashSet(int initialCapacity, float loadFactor, boolean dummy)
 生成一个LinkedHashMap
 ```
