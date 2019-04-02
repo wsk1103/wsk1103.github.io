@@ -15,4 +15,4 @@
 - 有良好的算法和数据结构基础。
 - 熟悉MySQL，有一定的调优经验。
 - 熟悉Redis。
-- wsk1261709167@gmail.com
+- wushukai1103@gmail.com
