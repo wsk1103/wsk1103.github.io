@@ -3,6 +3,7 @@ title: "Ubuntu 18安装zookeeper"
 
 tags:
   - zookeeper
+  - 架构
 ---
 
 
