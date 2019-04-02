@@ -15,6 +15,10 @@ This is a mod for SlayTheSpire!
 Now, I am developing.  
 目前正在开发中。
 
+GitHub: https://github.com/wsk1103/LagranYue
+
+steam: https://steamcommunity.com/sharedfiles/filedetails/?id=1668837064
+
 效果图：  
 -  ![这里写图片描述](https://raw.githubusercontent.com/wsk1103/LagranYue/master/img/1.png)
 -  ![这里写图片描述](https://raw.githubusercontent.com/wsk1103/LagranYue/master/img/2.png)
@@ -28,15 +32,3 @@ Now, I am developing.
 -  ![这里写图片描述](https://raw.githubusercontent.com/wsk1103/LagranYue/master/img/10.png)
 -  ![这里写图片描述](https://raw.githubusercontent.com/wsk1103/LagranYue/master/img/11.png)
 
-```
-{
-  "modid": "LagranYue",
-  "name": "拉格朗·月",
-  "author_list": ["sky"],
-  "description": "角色：武器大师·拉格朗·月，包含91张卡片，25件遗物。\n GitHub源码：https://github.com/wsk1103/LagranYue",
-  "dependencies": ["basemod"],
-  "version": "1.2.4",
-  "sts_version": "03-03-2019",
-  "mts_version": "3.6.0"
-}
- ```
