@@ -481,7 +481,7 @@ Map m = Collections.synchronizedMap(new HashMap(...));
 
 # HashTable
 
-HashMap 是线程不安全的，HashTable 是线程安全的。
+HashMap 是 **线程不安全** 的，HashTable 是 **线程安全** 的。
 
 实现的接口和继承的类和 HashMap 一致，里面的方法，变量的定义也是基本一致的。
 只是在操作数组和链表的时候，在所有的方法上都添加 **synchronized** 关键字。
