@@ -251,7 +251,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /etc/rc.d/init.d/redis.sh
 /etc/redis.conf
 /etc/systemd/system/redis-sentinel.service.d
-/etc/systemd/system/redis.service.d
 ```
 
 #### 删除文件
