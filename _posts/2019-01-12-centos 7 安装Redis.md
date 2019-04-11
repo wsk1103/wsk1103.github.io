@@ -240,7 +240,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /usr/local/bin/redis-server
 /usr/local/bin/redis-check-rdb
 /usr/local/bin/redis-check-aof
-/usr/local/bin/redis-benchmark
 /usr/libexec/redis-shutdown
 /etc/redis
 /etc/redis-sentinel.conf
