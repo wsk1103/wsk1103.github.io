@@ -215,7 +215,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /run/systemd/generator.late/runlevel5.target.wants/redis_init_script.service
 /run/systemd/generator.late/runlevel4.target.wants/redis_init_script.service
 /run/systemd/generator.late/runlevel3.target.wants/redis_init_script.service
-/run/systemd/generator.late/runlevel2.target.wants/redis_init_script.service
 /run/systemd/generator.late/redis_6379.service
 /usr/lib/python2.7/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.pyc
 /usr/lib/python2.7/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.py
