@@ -225,7 +225,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /usr/share/doc/redis-3.2.12
 /usr/share/man/man1/redis-server.1.gz
 /usr/share/man/man1/redis-cli.1.gz
-/usr/share/man/man1/redis-sentinel.1.gz
 /usr/share/man/man5/redis.conf.5.gz
 /usr/bin/redis-cli
 /usr/bin/redis-server
