@@ -240,7 +240,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /usr/libexec/redis-shutdown
 /etc/redis
 /etc/redis-sentinel.conf
-/etc/rc.d/init.d/redis_init_script
 /etc/rc.d/init.d/redis.sh
 ```
 
