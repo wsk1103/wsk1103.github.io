@@ -214,7 +214,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /run/systemd/generator.late/redis_init_script.service
 /run/systemd/generator.late/runlevel5.target.wants/redis_init_script.service
 /run/systemd/generator.late/runlevel4.target.wants/redis_init_script.service
-/run/systemd/generator.late/runlevel3.target.wants/redis_init_script.service
 /run/systemd/generator.late/redis_6379.service
 /usr/lib/systemd/system/redis-sentinel.service
 /usr/lib/systemd/system/redis.service
