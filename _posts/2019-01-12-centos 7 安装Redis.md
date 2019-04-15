@@ -189,7 +189,6 @@ root      2360  2273  0 13:51 pts/0    00:00:00 grep --color=auto redis
 /home/wsk/redis/redis-5.0.4/utils/redis-copy.rb
 /home/wsk/redis/redis-5.0.4/utils/redis_init_script
 /home/wsk/redis/redis-5.0.4/utils/redis-sha1.rb
-/home/wsk/redis/redis-5.0.4/tests/integration/redis-cli.tcl
 /home/wsk/redis/redis-5.0.4/tests/support/redis.tcl
 /home/wsk/redis/redis-5.0.4/redis.conf
 /home/wsk/redis/redis-5.0.4/src/redis-check-rdb.o
