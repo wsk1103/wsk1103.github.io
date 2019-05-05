@@ -5,6 +5,7 @@ url: "https://wsk1103.github.io/"
 
 tags:
   - Java
+  - 集合
 ---
 
 **java -version** ：jdk 1.8.0_191
