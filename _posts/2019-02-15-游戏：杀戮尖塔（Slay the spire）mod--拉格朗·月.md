@@ -10,10 +10,9 @@ tags:
 This is a mod for SlayTheSpire!  
 这是一个杀戮尖塔的MOD！
 
+char: Lagran Yue
 角色名称：拉格朗·月
 
-Now, I am developing.  
-目前正在开发中。
 
 GitHub: https://github.com/wsk1103/LagranYue
 
