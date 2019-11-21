@@ -1,10 +1,10 @@
 # Site settings
-title: 吴树楷·Sky
+title: Sky
 SEOTitle: Sky`s Blog
 header-img: img/home-bg.jpg
 email: wushukai1103@gmail.com
 description: "那些我很冒险的梦"
-keyword: "Java工程师"
+keyword: "Java工程师 架构师"
 url: "https://localhost"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
