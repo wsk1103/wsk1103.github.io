@@ -15,7 +15,7 @@ Keepalived is a routing software written in C. The main goal of this project is 
 
 Keepalived is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-Keepalive 是一款可以实现高可靠的软件，通常部署在2台服务器上，分为一主一备。Keepalived可以对本机上的进程进行检测，一旦 Master (主)检测出某个进程出现问题，将自己切换成 Backup (副)状态，然后通知另外一个节点切换成 Master (主)状态。
+Keepalive 是一款可以实现高可靠的软件，通常部署在大于2台的服务器上，其中一台作为主服务器，其余的作为备用服务器。Keepalived 可以对本机上的进程进行检测，一旦 Master (主)检测出某个进程出现问题，将自己切换成 Backup (副)状态，然后通知另外一个节点切换成 Master (主)状态。
 
 ## 2. Keepalived 安装
 
