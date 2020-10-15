@@ -7,6 +7,8 @@ tags:
   
 ---
 
+
+
 ### pt-duplicate-key-checker
 #### pt-duplicate-key-checker [OPTIONS] [DNS]
 查找数据库中重复的索引和外键。  
