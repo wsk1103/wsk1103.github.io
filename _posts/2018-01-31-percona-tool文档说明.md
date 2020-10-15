@@ -3,6 +3,8 @@ title: "percona-tool文档说明"
 
 tags:
   - MySQL
+  - percona-tool
+
 ---
 
 
