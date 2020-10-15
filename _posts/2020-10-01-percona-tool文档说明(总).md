@@ -3,7 +3,7 @@ title: "percona-tool文档说明(总)"
 
 tags:
   - MySQL
- - percona-tool
+  - percona-tool
 ---
 
 基本所有涉及到数据库的操作，都需要填写相应的DNS命令，例如用户名，密码，数据库，数据库表等等。
