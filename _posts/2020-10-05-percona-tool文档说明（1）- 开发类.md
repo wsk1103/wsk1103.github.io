@@ -60,7 +60,7 @@ OPTIONS中的””的命令内容无法使用多命令进行批操作。
 规范化并打印MySQL授权，以便可以有效地复制，比较和版本控制它们。
 
 ```
-pt-show-grants –p=sk.w1103
+pt-show-grants –p=password
 ```
 
 打印MySQL的所有用户权限

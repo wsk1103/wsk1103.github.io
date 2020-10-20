@@ -175,7 +175,7 @@ pt-fifo-split 默认会在/tmp下面建立一个fifo文件，并读取大文件�
 #### pt-find [OPTIONS] [DATABASES]
 查找MySQL中的表并执行操作，类似GUN的find命令。默认操作是打印数据库和表名。
 ```java
-pt-find --ctime +0 --engine InnoDB --password=sk.w1103
+pt-find --ctime +0 --engine InnoDB --password=password
 ```
 查找0天前所有用InnoDB创造的表并且打印出来
 
@@ -194,7 +194,7 @@ pt-find --engine InnoDB --exec "ALTER TABLE %D.%N ENGINE=MyISAM" –password=”
 
 
 ```
-pt-find --tablesize +1k –password=sk.w1103 test
+pt-find --tablesize +1k –password=password test
 ```
 
 寻找数据库test中，大于5k的表，并打印出来
@@ -230,7 +230,7 @@ pt-find --printf "%T\t%D.%N\n" | sort -rn
 查看当前MySQL的详细信息
 
 ```
-pt-mysql-summary –p=sk.w1103
+pt-mysql-summary –p=password
 ```
 
 
@@ -309,7 +309,7 @@ pt-kill --match-state login --print --victims all
 规范化并打印MySQL授权，以便可以有效地复制，比较和版本控制它们。
 
 ```
-pt-show-grants –p=sk.w1103
+pt-show-grants –p=password
 ```
 
 打印MySQL的所有用户权限
