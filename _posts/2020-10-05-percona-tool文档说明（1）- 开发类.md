@@ -6,8 +6,13 @@ tags:
   - percona-tool
   
 ---
+## 目录
+* [pt-duplicate-key-checker](#pt-duplicate-key-checker)
+* pt-online-schema-change
+* pt-show-grants
+* pt-upgrade
 
-
+ ---
 
 ### pt-duplicate-key-checker
 #### pt-duplicate-key-checker [OPTIONS] [DNS]
@@ -18,13 +23,11 @@ tags:
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/21.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/22.png)
 
 存在重复索引
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/22.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/24.png)
 
 
 ### pt-online-schema-change
@@ -33,7 +36,6 @@ ALTER操作但是表没有锁定它们
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/15.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/16.png)
 
 ```
 pt-online-schema-change --alter “add column col int(11) Default null” h=host,P=3306,D=db,t=table,u=username,p=password --execute  
@@ -61,13 +63,14 @@ OPTIONS中的””的命令内容无法使用多命令进行批操作。
 
 ```
 pt-show-grants –p=password
+
+
 ```
 
 打印MySQL的所有用户权限
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/37.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/38.png)
 
 
 ### pt-upgrade

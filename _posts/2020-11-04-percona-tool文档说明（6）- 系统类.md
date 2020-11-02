@@ -14,7 +14,6 @@ tags:
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/19.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/20.png)
 
 实时循环显示数据结果
 
@@ -39,13 +38,14 @@ pt-fifo-split 默认会在/tmp下面建立一个fifo文件，并读取大文件�
 #### pt-find [OPTIONS] [DATABASES]
 查找MySQL中的表并执行操作，类似GUN的find命令。默认操作是打印数据库和表名。
 ```java
-pt-find --ctime +0 --engine InnoDB --password=sk.w1103
+pt-find --ctime +0 --engine InnoDB --password=password
+
+
 ```
 查找0天前所有用InnoDB创造的表并且打印出来
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/25.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/26.png)
 
 ```java
 pt-find --engine InnoDB --exec "ALTER TABLE %D.%N ENGINE=MyISAM" –password=”” test
@@ -54,18 +54,16 @@ pt-find --engine InnoDB --exec "ALTER TABLE %D.%N ENGINE=MyISAM" –password=”
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/27.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/28.png)
 
 
 ```
-pt-find --tablesize +1k –password=sk.w1103 test
+pt-find --tablesize +1k –password=password test
 ```
 
 寻找数据库test中，大于5k的表，并打印出来
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/29.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/30.png)
 
 
 ```
@@ -76,7 +74,6 @@ pt-find --printf "%T\t%D.%N\n" | sort -rn
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/31.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/32.png)
 
 
 ### pt-summary
@@ -85,7 +82,6 @@ pt-find --printf "%T\t%D.%N\n" | sort -rn
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/33.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/34.png)
 
 
 ### pt-stalk

@@ -19,15 +19,12 @@ tags:
 具体使用，从一张表导入到另外一张表，要注意的是新表必须是已经建立好的一样的表结构，不会自动创建表，而且where条件是必须指定的，如果没有添加 –-no-delete，则默认会删除原来的表：
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/9.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/10.png)
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/11.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/12.png)
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/13.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/14.png)
 
 
 归档前的准备  
@@ -38,13 +35,12 @@ tags:
 #### pt-find [OPTIONS] [DATABASES]
 查找MySQL中的表并执行操作，类似GUN的find命令。默认操作是打印数据库和表名。
 ```java
-pt-find --ctime +0 --engine InnoDB --password=sk.w1103
+pt-find --ctime +0 --engine InnoDB --password=password
 ```
 查找0天前所有用InnoDB创造的表并且打印出来
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/25.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/26.png)
 
 ```java
 pt-find --engine InnoDB --exec "ALTER TABLE %D.%N ENGINE=MyISAM" –password=”” test
@@ -53,18 +49,16 @@ pt-find --engine InnoDB --exec "ALTER TABLE %D.%N ENGINE=MyISAM" –password=”
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/27.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/28.png)
 
 
 ```
-pt-find --tablesize +1k –password=sk.w1103 test
+pt-find --tablesize +1k –password=password test
 ```
 
 寻找数据库test中，大于5k的表，并打印出来
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/29.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/30.png)
 
 
 ```
@@ -75,7 +69,6 @@ pt-find --printf "%T\t%D.%N\n" | sort -rn
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/31.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/32.png)
 
 
 
@@ -132,16 +125,15 @@ pt-kill --match-state login --print --victims all
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/3.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/4.png)
+
 
 使用命令输出结果
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/5.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/6.png)
+
 
 使用例子
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/7.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/8.png)

@@ -28,7 +28,6 @@ pt-config-diff /etc/my.cof /etc/wsk.cof
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/17.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/18.png)
 
 
 ### pt-mysql-summary
@@ -37,12 +36,13 @@ pt-config-diff /etc/my.cof /etc/wsk.cof
 
 ```
 pt-mysql-summary –p=password
+
+
 ```
 
 
 ![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/35.png)
 
-![image](https://raw.githubusercontent.com/wsk1103/images/master/percona-tool/36.png)
 
 
 ### pt-variable-advisor
