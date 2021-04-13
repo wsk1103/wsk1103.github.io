@@ -7,10 +7,11 @@ tags:
   - 错误笔记
 ---
 
+
 **基于spring 3.2.9**   
 参考 [https://www.ibm.com/developerworks/cn/java/j-master-spring-transactional-use/index.html](https://www.ibm.com/developerworks/cn/java/j-master-spring-transactional-use/index.html)
 ### 1. Transactional是什么
- Transactional用来声明事务的，包括事务的begin和commit。被注解的public方法或者类在被调用的时候，spring会为该public方法或者类中的所有public方法生成一个代理类来代理被注解的方法。  
+Transactional用来声明事务的，包括事务的begin和commit。被注解的public方法或者对象在被调用的时候，spring会为该public方法或者对象中的所有public方法生成一个代理对象来代理被注解的方法。
 
 例如：  
 原类->
@@ -26,22 +27,23 @@ public class A {
 被代理后
 
 ```
-public class Proxy$A {
+public class Proxy$A extend A{
 
     A a = new A();
 
     //spring扫描注解后，为注解的方法插入一个startTransaction()方法。
     public void a () {
         startTransaction();
+
         a.a();
         commitTransactionAfterReturning();
     }
 }
 ```
 
-## 2. 怎么使用@Transactional  
+## 2. 怎么使用@Transactional
 目前比较流行的使用是基于Java注解声明。
-分为2个步骤：  
+分为2个步骤：
 
 1. 在spring.xml文件中声明事务的配置信息
 
@@ -57,7 +59,7 @@ public class Proxy$A {
     <tx:annotation-driven/>
     <!--======= 事务配置 End =================== -->
 ```
-2. 在public方法或者类上声明@Transactional 
+2. 在public方法或者类上声明@Transactional
 
 @Transactional 注解属性说明：
 
@@ -73,7 +75,7 @@ rollbackForClassName | 定义异常的名字，这些异常会触发回滚机制
 noRollbackFor | 抛出异常，不回滚。多个类型以,（英文逗号）隔开
 noRollbackForClassName | 定义异常的名字，抛出异常，不回滚。多个类型以,（英文逗号）隔开
 
-示例：  
+示例：
 
 ```
 @Transactional(value = "transactionManager", timeout = 5, rollbackFor = {RuntimeException.class, NullPointerException.class},
@@ -87,7 +89,7 @@ public void b() {
 1. spring默认使用AOP扫描被@Transactional的public方法，根据配置信息判断是否由TransactionInterceptor 进行拦截。
 2. TransactionInterceptor 进行拦截，在目标方法执行前创建事务，并执行目标方法。
 3. 根据sql执行情况，利用抽象事务管理器AbstractPlatformTransactionManager 操作数据源DataSource ，执行提交或者回滚操作。
-![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20transaclational/1.jpg)
+   ![image](https://raw.githubusercontent.com/wsk1103/images/master/spring%20transaclational/1.jpg)
 
 ### 4. 问题重现
 该问题是spring的AOP自调用引起的，注意文字开头说明。
@@ -106,7 +108,7 @@ public class A {
 ```
 
 如果这个时候直接通过调用a()方法，那么在b()方法运行错误的时候，是不会回滚代码的。原因如下：  
-类A会经过spring 中的AOP生成代理类ProxyA
+类A会经过spring 中的AOP生成代理对象ProxyA
 
 ```
 public class Proxy$A {
@@ -125,12 +127,69 @@ public class Proxy$A {
 }
 ```
 
-然后在运行的时候，是直接调用代理类A（Proxy$A）中的a()方法，该a()方法直接调用原A类的a()方法，所以不会启动事务，最终导致事务失效。
+然后在运行的时候，是直接调用代理对象A（Proxy$A）中的a()方法，该a()方法直接调用原A类的a()方法，所以不会启动事务，最终导致事务失效。
+
+### 5. 简单验证
+
+测试类
+```
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = ConfigApp.class)
+public class ATest {
+
+    @Autowired
+    private A a;
+
+    @Test
+    public void run() {
+        System.out.println("test a is:" + a.getClass().getName());
+        a.run2(a);
+    }
+
+}
+```
+
+代理类
+```
+package com.t;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class A {
+
+    @Transactional(rollbackFor = Exception.class)
+    public void run1(A a) {
+        System.out.println("run1 入参a:" + a.getClass().getName());
+        System.out.println("run1 原a:" + this.getClass().getName());
+    }
+
+    public void run2(A a) {
+        System.out.println("run2 入参a:" + a.getClass().getName());
+        run1(a);
+        System.out.println("run2 原a:" + this.getClass().getName());
+    }
+
+}
+```
+
+结果输出
+```
+test a is:com.t.A$$EnhancerBySpringCGLIB$$c2ad1d54
+run2 入参a:com.t.A$$EnhancerBySpringCGLIB$$c2ad1d54
+run1 入参a:com.t.A$$EnhancerBySpringCGLIB$$c2ad1d54
+run1 原a:com.t.A
+run2 原a:com.t.A
+```
+
+结果简单说明
+类A被代理后，会在代理对象ProxyA中声明一个新的对象A，并将A中d对应的方法重新封装。当调用原A的方法时，流程就会变成 proxyA.a() -> a.a()
 
 ### 5. 解决方法
-- 将b()方法抽出来，重新声明一个类，并且该类交由spring管理控制。 
-- 同时在a()上添加@Transactional注解或者在类上添加。
-- 在原A类中的a()方法，改为 **((A)AopContext.currentProxy).b()**
+- 第一种：将b()方法抽出来，重新声明一个类，并且该类交由spring管理控制。
+- 第二种：同时在a()上添加@Transactional注解或者在类上添加。
+- 第三种：在原A类中的a()方法，改为 **((A)AopContext.currentProxy).b()**
 
 
 
