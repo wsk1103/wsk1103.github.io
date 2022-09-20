@@ -1,16 +1,16 @@
 # Site settings
-title: AceKei
-SEOTitle: AceKei`s Blog
+title: xiaoxinlore
+SEOTitle: xiaoxinlore`s Blog
 header-img: img/home-bg.jpg
-email: wushukai1103@gmail.com
-description: "那些我很冒险的梦"
+email: xiaoxinlore@qq.com
+description: "知道的越多不知道的越多"
 keyword: "Java工程师 架构师"
 url: "https://localhost"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 author: AceKei
-signature: 那些我很冒险的梦
+signature: 知道的越多不知道的越多
 # Publish posts or collection documents with a future date.
 future: true
 
@@ -18,8 +18,8 @@ future: true
 RSS: false
 # weibo_username:     wsk1103
 # zhihu_username:     wsk1103
-github_username:    wsk1103
-gitee_username:     wsk1103
+github_username:    i-xiaoxin
+#gitee_username:     i-xiaoxin
 # twitter_username:   wsk1103
 #facebook_username:  wsk1103
 #linkedin_username:  firstname-lastname-idxxxx
@@ -79,7 +79,7 @@ ga_domain: auto
 
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+sidebar: false                           # whether or not using Sidebar.
 sidebar-about-description: "请注明来意"
 sidebar-avatar: /img/weixin.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
@@ -122,12 +122,12 @@ theme: jekyll-theme-minimal
 #gitalk settings
 gitalk:
   #用来做启用判断可以不用
-  enable: true
+  enable: false
   #Github 用户名,
-  owner: wsk1103
+  owner: i-xiaoxin
   #储存评论issue的github仓库名
-  repo: wsk1103.github.io
-  admin: wsk1103 #Github 用户名,
+  repo: i-xiaoxin.github.io
+  admin: i-xiaoxin #Github 用户名,
   #`Github Application clientID`
   clientID: 37d92ae6dc1fb1f58f7c
   #`Github Application clientSecret`
